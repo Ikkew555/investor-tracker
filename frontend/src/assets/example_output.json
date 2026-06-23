@@ -1,0 +1,577 @@
+{
+  "status": "ok",
+  "meta": {
+    "engine_version": "2.0.0",
+    "calculated_at": "2026-04-15T04:18:15.864927Z",
+    "tools_run": [
+      "performance",
+      "sold_securities",
+      "future_income",
+      "contribution_analysis",
+      "multi_currency",
+      "multi_period",
+      "calendar"
+    ]
+  },
+  "results": {
+    "performance": {
+      "status": "ok",
+      "meta": {
+        "tool": "performance",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.862339Z",
+        "from_date": "2025-07-01",
+        "to_date": "2026-06-30",
+        "include_sold": true,
+        "warnings": []
+      },
+      "summary": {
+        "opening_value": 30860.0,
+        "closing_value": 34310.0,
+        "unrealised_gain": 3450.0,
+        "realised_gain": 715.0,
+        "capital_gain": 4165.0,
+        "dividend_income": 2175.0,
+        "total_return": 6340.0,
+        "total_return_pct": 20.54
+      },
+      "holdings": [
+        {
+          "symbol": "CBA",
+          "quantity": 100,
+          "cost_base": 7300.0,
+          "market_value": 10250.0,
+          "capital_gain": 2950.0,
+          "dividends": 840.0,
+          "total_return": 3790.0,
+          "return_pct": 51.92
+        },
+        {
+          "symbol": "BHP",
+          "quantity": 150,
+          "cost_base": 7800.0,
+          "market_value": 6870.0,
+          "capital_gain": -930.0,
+          "dividends": 1240.0,
+          "total_return": 310.0,
+          "return_pct": 3.97
+        },
+        {
+          "symbol": "CSL",
+          "quantity": 20,
+          "cost_base": 5500.0,
+          "market_value": 5900.0,
+          "capital_gain": 400.0,
+          "dividends": 95.0,
+          "total_return": 495.0,
+          "return_pct": 9.0
+        },
+        {
+          "symbol": "AAPL",
+          "quantity": 50,
+          "cost_base": 9500.0,
+          "market_value": 10500.0,
+          "capital_gain": 1000.0,
+          "dividends": 0.0,
+          "total_return": 1000.0,
+          "return_pct": 10.53
+        },
+        {
+          "symbol": "TLS",
+          "quantity": 200,
+          "cost_base": 760.0,
+          "market_value": 790.0,
+          "capital_gain": 30.0,
+          "dividends": 0.0,
+          "total_return": 30.0,
+          "return_pct": 3.95
+        }
+      ]
+    },
+    "sold_securities": {
+      "status": "ok",
+      "meta": {
+        "tool": "sold_securities",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.862541Z",
+        "from_date": "2025-07-01",
+        "to_date": "2026-06-30"
+      },
+      "summary": {
+        "total_disposals": 2,
+        "total_proceeds": 9155.0,
+        "total_cost_base": 8440.0,
+        "total_realised_gain": 880.0,
+        "total_realised_loss": 165.0,
+        "net_realised": 715.0
+      },
+      "sold_events": [
+        {
+          "disposal_id": "S001",
+          "symbol": "CBA",
+          "disposal_date": "2025-09-12",
+          "quantity": 100,
+          "gross_proceeds": 8200,
+          "brokerage": 20,
+          "net_proceeds": 8180,
+          "cost_base": 7300.0,
+          "realised_gain": 880.0,
+          "holding_days": 917,
+          "is_gain": true,
+          "matched_parcels": [
+            {
+              "parcel_id": "P001",
+              "quantity_taken": 100,
+              "acquired_date": "2023-03-10"
+            }
+          ]
+        },
+        {
+          "disposal_id": "S002",
+          "symbol": "TLS",
+          "disposal_date": "2026-05-10",
+          "quantity": 300,
+          "gross_proceeds": 990,
+          "brokerage": 15,
+          "net_proceeds": 975,
+          "cost_base": 1140.0,
+          "realised_gain": -165.0,
+          "holding_days": 435,
+          "is_gain": false,
+          "matched_parcels": [
+            {
+              "parcel_id": "P005",
+              "quantity_taken": 300,
+              "acquired_date": "2025-03-01"
+            }
+          ]
+        }
+      ]
+    },
+    "future_income": {
+      "status": "ok",
+      "meta": {
+        "tool": "future_income",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.862765Z"
+      },
+      "summary": {
+        "total_annual_income": 2175.0,
+        "average_yield_pct": 9.45,
+        "symbols_with_income": 3
+      },
+      "forecast": [
+        {
+          "symbol": "BHP",
+          "quantity": 150,
+          "annual_dps": 8.2667,
+          "annual_income": 1240.0,
+          "yield_pct": 18.05,
+          "last_payment_date": "2026-06-15",
+          "last_payment_amount": 620
+        },
+        {
+          "symbol": "CBA",
+          "quantity": 100,
+          "annual_dps": 8.4,
+          "annual_income": 840.0,
+          "yield_pct": 8.2,
+          "last_payment_date": "2025-09-28",
+          "last_payment_amount": 840
+        },
+        {
+          "symbol": "CSL",
+          "quantity": 20,
+          "annual_dps": 4.75,
+          "annual_income": 95.0,
+          "yield_pct": 1.61,
+          "last_payment_date": "2026-02-20",
+          "last_payment_amount": 95
+        }
+      ]
+    },
+    "contribution_analysis": {
+      "status": "ok",
+      "meta": {
+        "tool": "contribution_analysis",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.862932Z"
+      },
+      "summary": {
+        "portfolio_return_pct": 21.17,
+        "total_market_value": 34310.0,
+        "total_cost_base": 30860.0,
+        "best_contributor": {
+          "symbol": "CBA",
+          "name": "Commonwealth Bank",
+          "sector": "Financials",
+          "asset_type": "Equity",
+          "weight_pct": 29.87,
+          "return_pct": 51.92,
+          "contribution_pct": 15.51,
+          "total_return": 3790.0
+        },
+        "worst_contributor": {
+          "symbol": "TLS",
+          "name": "Telstra Group",
+          "sector": "Communications",
+          "asset_type": "Equity",
+          "weight_pct": 2.3,
+          "return_pct": 3.95,
+          "contribution_pct": 0.09,
+          "total_return": 30.0
+        }
+      },
+      "holdings": [
+        {
+          "symbol": "CBA",
+          "name": "Commonwealth Bank",
+          "sector": "Financials",
+          "asset_type": "Equity",
+          "weight_pct": 29.87,
+          "return_pct": 51.92,
+          "contribution_pct": 15.51,
+          "total_return": 3790.0
+        },
+        {
+          "symbol": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Technology",
+          "asset_type": "Equity",
+          "weight_pct": 30.6,
+          "return_pct": 10.53,
+          "contribution_pct": 3.22,
+          "total_return": 1000.0
+        },
+        {
+          "symbol": "CSL",
+          "name": "CSL Limited",
+          "sector": "Health Care",
+          "asset_type": "Equity",
+          "weight_pct": 17.2,
+          "return_pct": 9.0,
+          "contribution_pct": 1.55,
+          "total_return": 495.0
+        },
+        {
+          "symbol": "BHP",
+          "name": "BHP Group",
+          "sector": "Materials",
+          "asset_type": "Equity",
+          "weight_pct": 20.02,
+          "return_pct": 3.97,
+          "contribution_pct": 0.8,
+          "total_return": 310.0
+        },
+        {
+          "symbol": "TLS",
+          "name": "Telstra Group",
+          "sector": "Communications",
+          "asset_type": "Equity",
+          "weight_pct": 2.3,
+          "return_pct": 3.95,
+          "contribution_pct": 0.09,
+          "total_return": 30.0
+        }
+      ],
+      "by_sector": {
+        "Financials": {
+          "weight_pct": 29.87,
+          "contribution_pct": 15.51
+        },
+        "Technology": {
+          "weight_pct": 30.6,
+          "contribution_pct": 3.22
+        },
+        "Health Care": {
+          "weight_pct": 17.2,
+          "contribution_pct": 1.55
+        },
+        "Materials": {
+          "weight_pct": 20.02,
+          "contribution_pct": 0.8
+        },
+        "Communications": {
+          "weight_pct": 2.3,
+          "contribution_pct": 0.09
+        }
+      },
+      "by_asset_type": {
+        "Equity": {
+          "weight_pct": 99.99,
+          "contribution_pct": 21.17
+        }
+      }
+    },
+    "multi_currency": {
+      "status": "ok",
+      "meta": {
+        "tool": "multi_currency",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.863068Z",
+        "base_currency": "AUD"
+      },
+      "summary": {
+        "total_market_value_base": 51205.0,
+        "total_cost_base": 39300.0,
+        "total_investment_gain": 11905.0,
+        "total_fx_gain": 0.0,
+        "total_gain": 11905.0
+      },
+      "by_currency": {
+        "AUD": {
+          "market_value_base": 35245.0,
+          "investment_gain": 5445.0,
+          "fx_gain": 0.0,
+          "total_gain": 5445.0,
+          "count": 4,
+          "weight_pct": 68.83
+        },
+        "USD": {
+          "market_value_base": 15960.0,
+          "investment_gain": 6460.0,
+          "fx_gain": 0.0,
+          "total_gain": 6460.0,
+          "count": 1,
+          "weight_pct": 31.17
+        }
+      },
+      "by_country": {
+        "AU": {
+          "market_value_base": 35245.0,
+          "investment_gain": 5445.0,
+          "fx_gain": 0.0,
+          "total_gain": 5445.0,
+          "count": 4,
+          "weight_pct": 68.83
+        },
+        "US": {
+          "market_value_base": 15960.0,
+          "investment_gain": 6460.0,
+          "fx_gain": 0.0,
+          "total_gain": 6460.0,
+          "count": 1,
+          "weight_pct": 31.17
+        }
+      },
+      "holdings": [
+        {
+          "parcel_id": "P001",
+          "symbol": "CBA",
+          "currency": "AUD",
+          "country": "AU",
+          "quantity": 200,
+          "local_price": 102.5,
+          "local_market_value": 20500.0,
+          "fx_rate_current": 1.0,
+          "fx_rate_at_purchase": 1.0,
+          "market_value_base": 20500.0,
+          "cost_base": 14600,
+          "investment_gain": 5900.0,
+          "fx_gain": 0.0,
+          "total_gain": 5900.0
+        },
+        {
+          "parcel_id": "P002",
+          "symbol": "BHP",
+          "currency": "AUD",
+          "country": "AU",
+          "quantity": 150,
+          "local_price": 45.8,
+          "local_market_value": 6870.0,
+          "fx_rate_current": 1.0,
+          "fx_rate_at_purchase": 1.0,
+          "market_value_base": 6870.0,
+          "cost_base": 7800,
+          "investment_gain": -930.0,
+          "fx_gain": 0.0,
+          "total_gain": -930.0
+        },
+        {
+          "parcel_id": "P003",
+          "symbol": "CSL",
+          "currency": "AUD",
+          "country": "AU",
+          "quantity": 20,
+          "local_price": 295.0,
+          "local_market_value": 5900.0,
+          "fx_rate_current": 1.0,
+          "fx_rate_at_purchase": 1.0,
+          "market_value_base": 5900.0,
+          "cost_base": 5500,
+          "investment_gain": 400.0,
+          "fx_gain": 0.0,
+          "total_gain": 400.0
+        },
+        {
+          "parcel_id": "P004",
+          "symbol": "AAPL",
+          "currency": "USD",
+          "country": "US",
+          "quantity": 50,
+          "local_price": 210.0,
+          "local_market_value": 10500.0,
+          "fx_rate_current": 1.52,
+          "fx_rate_at_purchase": 1.52,
+          "market_value_base": 15960.0,
+          "cost_base": 9500,
+          "investment_gain": 6460.0,
+          "fx_gain": 0.0,
+          "total_gain": 6460.0
+        },
+        {
+          "parcel_id": "P005",
+          "symbol": "TLS",
+          "currency": "AUD",
+          "country": "AU",
+          "quantity": 500,
+          "local_price": 3.95,
+          "local_market_value": 1975.0,
+          "fx_rate_current": 1.0,
+          "fx_rate_at_purchase": 1.0,
+          "market_value_base": 1975.0,
+          "cost_base": 1900,
+          "investment_gain": 75.0,
+          "fx_gain": 0.0,
+          "total_gain": 75.0
+        }
+      ]
+    },
+    "multi_period": {
+      "status": "ok",
+      "meta": {
+        "tool": "multi_period",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.864607Z",
+        "anchor_date": "2026-06-30"
+      },
+      "periods": [
+        {
+          "period": "1M",
+          "from_date": "2026-05-31",
+          "to_date": "2026-06-30",
+          "opening_value": 43500.0,
+          "closing_value": 45745.0,
+          "capital_gain": 1625.0,
+          "dividend_income": 620.0,
+          "total_return": 2245.0,
+          "return_pct": 5.16
+        },
+        {
+          "period": "3M",
+          "from_date": "2026-03-31",
+          "to_date": "2026-06-30",
+          "opening_value": 41200.0,
+          "closing_value": 45745.0,
+          "capital_gain": 3925.0,
+          "dividend_income": 620.0,
+          "total_return": 4545.0,
+          "return_pct": 11.03
+        },
+        {
+          "period": "6M",
+          "from_date": "2025-12-30",
+          "to_date": "2026-06-30",
+          "opening_value": 39850.0,
+          "closing_value": 45745.0,
+          "capital_gain": 5180.0,
+          "dividend_income": 715.0,
+          "total_return": 5895.0,
+          "return_pct": 14.79
+        },
+        {
+          "period": "1Y",
+          "from_date": "2025-06-30",
+          "to_date": "2026-06-30",
+          "opening_value": 30860.0,
+          "closing_value": 34310.0,
+          "capital_gain": 4165.0,
+          "dividend_income": 2175.0,
+          "total_return": 6340.0,
+          "return_pct": 20.54
+        },
+        {
+          "period": "3Y",
+          "from_date": "2023-07-01",
+          "to_date": "2026-06-30",
+          "opening_value": 24500.0,
+          "closing_value": 34310.0,
+          "capital_gain": 7305.0,
+          "dividend_income": 2505.0,
+          "total_return": 9810.0,
+          "return_pct": 40.04
+        },
+        {
+          "period": "5Y",
+          "from_date": "2021-07-01",
+          "to_date": "2026-06-30",
+          "opening_value": 18500.0,
+          "closing_value": 34310.0,
+          "capital_gain": 11940.0,
+          "dividend_income": 3870.0,
+          "total_return": 15810.0,
+          "return_pct": 85.46
+        },
+        {
+          "period": "Inception",
+          "from_date": "2022-11-05",
+          "to_date": "2026-06-30",
+          "opening_value": 22000.0,
+          "closing_value": 34310.0,
+          "capital_gain": 9155.0,
+          "dividend_income": 3155.0,
+          "total_return": 12310.0,
+          "return_pct": 55.95
+        }
+      ]
+    },
+    "calendar": {
+      "status": "ok",
+      "meta": {
+        "tool": "calendar",
+        "engine_version": "2.0.0",
+        "calculated_at": "2026-04-15T04:18:15.864894Z",
+        "anchor_date": "2026-06-30",
+        "horizon_date": "2027-06-30"
+      },
+      "summary": {
+        "total_events": 4,
+        "total_expected_income": 2175.0
+      },
+      "upcoming_events": [
+        {
+          "date": "2026-09-28",
+          "symbol": "CBA",
+          "event_type": "dividend",
+          "amount": 840.0,
+          "description": "Projected dividend for CBA",
+          "frequency_days": 365
+        },
+        {
+          "date": "2026-12-14",
+          "symbol": "BHP",
+          "event_type": "dividend",
+          "amount": 620.0,
+          "description": "Projected dividend for BHP",
+          "frequency_days": 182
+        },
+        {
+          "date": "2027-02-20",
+          "symbol": "CSL",
+          "event_type": "dividend",
+          "amount": 95.0,
+          "description": "Projected dividend for CSL",
+          "frequency_days": 365
+        },
+        {
+          "date": "2027-06-14",
+          "symbol": "BHP",
+          "event_type": "dividend",
+          "amount": 620.0,
+          "description": "Projected dividend for BHP",
+          "frequency_days": 182
+        }
+      ]
+    }
+  }
+}

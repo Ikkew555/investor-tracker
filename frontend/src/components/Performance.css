@@ -1,0 +1,9 @@
+body {
+  background-color: #121212;
+  color: white;
+}
+
+button.active {
+  background-color: #db2825;
+  color: black;
+}

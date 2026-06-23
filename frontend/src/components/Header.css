@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Make header full width */
+  padding: 20px; /* Add padding inside the header */
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 50px;
+  box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
+  background-color: var(--navbar-bg);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 60px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.nav a:hover, .nav a.active {
+  color: var(--primary-color);
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.code-icon {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .nav li {
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .user-controls {
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+}

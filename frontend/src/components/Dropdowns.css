@@ -1,0 +1,28 @@
+/* Dropdowns.css */
+
+.dropdowns-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dropdown {
+  border: 1px solid #d1d5db;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  background-color: white;
+  color: #1f2937;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.dropdown:hover {
+  border-color: #93c5fd;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.2);
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}

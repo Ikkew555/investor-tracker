@@ -1,0 +1,231 @@
+{
+  "status": "ok",
+  "meta": {
+    "engine_version": "1.0.0",
+    "calculated_at": "2026-04-10T02:32:32.051Z",
+    "financial_year": "FY2024",
+    "entity_type": "individual",
+    "parcel_matching": "fifo",
+    "cgt_method_config": "auto"
+  },
+  "cgt_summary": {
+    "total_gross_gains": 1800,
+    "total_cgt_discount_applied": 900,
+    "total_net_gains_after_discount": 900,
+    "total_capital_losses": 337,
+    "prior_year_carried_forward_loss_applied": 0,
+    "net_capital_gain": 563,
+    "new_carried_forward_loss": 0
+  },
+  "dividend_summary": {
+    "total_cash_dividends": 2215,
+    "total_franking_credits": 878.13,
+    "total_grossed_up_income": 3093.13
+  },
+  "cgt_events": [
+    {
+      "parcel_id": "P001",
+      "disposal_id": "S001",
+      "symbol": "CBA",
+      "acquired_date": "2021-03-10",
+      "disposal_date": "2023-09-12",
+      "holding_days": 916,
+      "units_disposed": 100,
+      "cost_base": 7300,
+      "indexed_cost_base": 7300,
+      "proceeds": 8180,
+      "raw_gain": 880,
+      "cgt_method": "discount",
+      "discount_rate": 0.5,
+      "discount_applied": 440,
+      "net_gain": 440,
+      "capital_loss": 0,
+      "is_loss": false
+    },
+    {
+      "parcel_id": "P002",
+      "disposal_id": "S002",
+      "symbol": "BHP",
+      "acquired_date": "2020-11-05",
+      "disposal_date": "2024-01-22",
+      "holding_days": 1173,
+      "units_disposed": 80,
+      "cost_base": 4160,
+      "indexed_cost_base": 4160,
+      "proceeds": 5080,
+      "raw_gain": 920,
+      "cgt_method": "discount",
+      "discount_rate": 0.5,
+      "discount_applied": 460,
+      "net_gain": 460,
+      "capital_loss": 0,
+      "is_loss": false
+    },
+    {
+      "parcel_id": "P004",
+      "disposal_id": "S003",
+      "symbol": "WBC",
+      "acquired_date": "2023-01-15",
+      "disposal_date": "2024-03-05",
+      "holding_days": 415,
+      "units_disposed": 200,
+      "cost_base": 6000,
+      "indexed_cost_base": 6000,
+      "proceeds": 5780,
+      "raw_gain": -220,
+      "cgt_method": "loss",
+      "discount_rate": 0,
+      "discount_applied": 0,
+      "net_gain": 0,
+      "capital_loss": 220,
+      "is_loss": true
+    },
+    {
+      "parcel_id": "P005",
+      "disposal_id": "S004",
+      "symbol": "TLS",
+      "acquired_date": "2023-03-01",
+      "disposal_date": "2024-05-10",
+      "holding_days": 436,
+      "units_disposed": 300,
+      "cost_base": 1140,
+      "indexed_cost_base": 1140,
+      "proceeds": 975,
+      "raw_gain": -165,
+      "cgt_method": "loss",
+      "discount_rate": 0,
+      "discount_applied": 0,
+      "net_gain": 0,
+      "capital_loss": 117,
+      "is_loss": true
+    },
+    {
+      "parcel_id": "P006",
+      "disposal_id": "S004",
+      "symbol": "TLS",
+      "acquired_date": "2023-03-01",
+      "disposal_date": "2024-05-10",
+      "holding_days": 436,
+      "units_disposed": 300,
+      "cost_base": 1140,
+      "indexed_cost_base": 1140,
+      "proceeds": 975,
+      "raw_gain": -165,
+      "cgt_method": "loss",
+      "discount_rate": 0,
+      "discount_applied": 0,
+      "net_gain": 0,
+      "capital_loss": 117,
+      "is_loss": true
+    }
+  ],
+  "dividend_events": [
+    {
+      "dividend_id": "D001",
+      "symbol": "CBA",
+      "payment_date": "2023-09-28",
+      "cash_amount": 840,
+      "franking_percent": 100,
+      "franking_credits": 360,
+      "grossed_up_dividend": 1200
+    },
+    {
+      "dividend_id": "D002",
+      "symbol": "BHP",
+      "payment_date": "2023-12-15",
+      "cash_amount": 620,
+      "franking_percent": 100,
+      "franking_credits": 265.71,
+      "grossed_up_dividend": 885.71
+    },
+    {
+      "dividend_id": "D003",
+      "symbol": "WBC",
+      "payment_date": "2024-03-28",
+      "cash_amount": 480,
+      "franking_percent": 100,
+      "franking_credits": 205.71,
+      "grossed_up_dividend": 685.71
+    },
+    {
+      "dividend_id": "D004",
+      "symbol": "CSL",
+      "payment_date": "2024-02-20",
+      "cash_amount": 95,
+      "franking_percent": 20,
+      "franking_credits": 8.14,
+      "grossed_up_dividend": 103.14
+    },
+    {
+      "dividend_id": "D005",
+      "symbol": "TLS",
+      "payment_date": "2023-10-10",
+      "cash_amount": 180,
+      "franking_percent": 50,
+      "franking_credits": 38.57,
+      "grossed_up_dividend": 218.57
+    }
+  ],
+  "remaining_parcels": [
+    {
+      "parcel_id": "P001",
+      "symbol": "CBA",
+      "acquired_date": "2021-03-10",
+      "original_quantity": 200,
+      "remaining_quantity": 100,
+      "remaining_cost_base": 7300,
+      "unit_cost_base": 73
+    },
+    {
+      "parcel_id": "P002",
+      "symbol": "BHP",
+      "acquired_date": "2020-11-05",
+      "original_quantity": 150,
+      "remaining_quantity": 70,
+      "remaining_cost_base": 3640,
+      "unit_cost_base": 52
+    },
+    {
+      "parcel_id": "P003",
+      "symbol": "CSL",
+      "acquired_date": "2022-06-20",
+      "original_quantity": 20,
+      "remaining_quantity": 20,
+      "remaining_cost_base": 5500,
+      "unit_cost_base": 275
+    },
+    {
+      "parcel_id": "P004",
+      "symbol": "WBC",
+      "acquired_date": "2023-01-15",
+      "original_quantity": 300,
+      "remaining_quantity": 100,
+      "remaining_cost_base": 3000,
+      "unit_cost_base": 30
+    },
+    {
+      "parcel_id": "P005",
+      "symbol": "TLS",
+      "acquired_date": "2023-03-01",
+      "original_quantity": 500,
+      "remaining_quantity": 200,
+      "remaining_cost_base": 760,
+      "unit_cost_base": 3.8
+    }
+  ],
+  "method_breakdown": {
+    "discount": {
+      "event_count": 2,
+      "total_net_gain": 900,
+      "total_capital_loss": 0,
+      "total_discount_applied": 900
+    },
+    "loss": {
+      "event_count": 2,
+      "total_net_gain": 0,
+      "total_capital_loss": 337,
+      "total_discount_applied": 0
+    }
+  },
+  "disposal_errors": []
+}

@@ -1,0 +1,114 @@
+/* Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --card-bg: #f0f0f0;
+  --secondary-text: #444444;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --secondary-text: #cccccc;
+}
+
+/* Features Container */
+.features-container {
+  padding: 60px 30px;
+  background-color: var(--bg-color);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeIn 0.8s ease-in;
+  color: var(--text-color);
+}
+
+/* Title */
+.features-title {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.features-subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary-text);
+  margin-bottom: 50px;
+}
+
+/* Grid */
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Feature Card */
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: left;
+  animation: slideUp 0.5s ease;
+  color: var(--text-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon/Image */
+.feature-image {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+/* Card Title */
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* Card Paragraph */
+.feature-card p {
+  color: var(--secondary-text);
+  font-size: 0.95rem;
+}
+
+/* Removed Sign-up Button and Footer */
+.signup-button {
+  display: none;
+}
+
+.footer {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,103 @@
+.reports-container {
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.reports-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.report-card {
+
+  border-radius: 5px;
+  border: 1px solid #e0e0e0;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.report-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.report-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.report-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.view-report-btn {
+  padding: 0.5rem 1rem;
+  background-color: #bfcfe0;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-report-btn:hover {
+  background-color: #0056b3;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 500px;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  z-index: 1001;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-header {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal-body {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}

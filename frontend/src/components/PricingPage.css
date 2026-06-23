@@ -1,0 +1,154 @@
+/* Theme Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --card-bg: #f0f0f0;
+  --highlight-color: #4ade80;
+  --secondary-text: #444;
+  --button-bg: #ffffff;
+  --button-text: #121212;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --highlight-color: #4ade80;
+  --secondary-text: #cccccc;
+  --button-bg: #ffffff;
+  --button-text: #121212;
+}
+
+/* Pricing Wrapper */
+.pricing-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 60px 30px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* Title */
+.pricing-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+/* Toggle Buttons */
+.billing-toggle {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.billing-toggle button {
+  padding: 10px 20px;
+  background-color: var(--secondary-text);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.billing-toggle .active {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+}
+
+/* Pricing Cards Grid */
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Card Styles */
+.pricing-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 30px;
+  width: 280px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: left;
+  animation: slideUp 0.5s ease;
+  color: var(--text-color);
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card h2 {
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* Price Highlight */
+.price {
+  font-size: 32px;
+  color: var(--highlight-color);
+  margin: 15px 0;
+}
+
+/* Feature List */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  color: var(--secondary-text);
+}
+
+/* Choose Button */
+.choose-btn {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.choose-btn:hover {
+  background-color: #acacac;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
