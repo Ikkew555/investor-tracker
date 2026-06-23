@@ -1,0 +1,155 @@
+services:
+
+  # ── Redis (engine result cache) ───────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: >
+      redis-server
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+      --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      retries: 5
+    networks:
+      - nexgen
+
+  # ── Frontend ──────────────────────────────────────────────────────────────
+  frontend:
+    image: nexgen-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_SUPABASE_URL: ${VITE_SUPABASE_URL}
+        VITE_SUPABASE_ANON_KEY: ${VITE_SUPABASE_ANON_KEY}
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
+    ports:
+      - "4173:4173"
+    env_file: .env
+    networks:
+      - nexgen
+
+  # ── Backend ───────────────────────────────────────────────────────────────
+  backend:
+    image: nexgen-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      AIRFLOW_BASE_URL: http://airflow-webserver:8080
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - nexgen
+
+  # ── Airflow metadata DB (separate from Supabase) ──────────────────────────
+  airflow-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 10
+    networks:
+      - nexgen
+
+  # ── Airflow one-time initialisation ───────────────────────────────────────
+  airflow-init:
+    build:
+      context: ./data-pipeline
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    command: bash -c "airflow db migrate && (airflow users create --username admin --password admin --firstname Admin --lastname User --role Admin --email admin@nexgen.local || true)"
+    depends_on:
+      airflow-db:
+        condition: service_healthy
+    networks:
+      - nexgen
+
+  # ── Airflow webserver ─────────────────────────────────────────────────────
+  airflow-webserver:
+    build:
+      context: ./data-pipeline
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    env_file: .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      AIRFLOW__API__AUTH_BACKENDS: airflow.api.auth.backend.basic_auth
+      PYTHONPATH: /opt/airflow
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+    command: airflow webserver
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      retries: 5
+    volumes:
+      - airflow_logs:/opt/airflow/logs
+    networks:
+      - nexgen
+
+  # ── Airflow scheduler ─────────────────────────────────────────────────────
+  airflow-scheduler:
+    build:
+      context: ./data-pipeline
+      dockerfile: Dockerfile
+    env_file: .env
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      PYTHONPATH: /opt/airflow
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+    command: airflow scheduler
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    volumes:
+      - airflow_logs:/opt/airflow/logs
+    networks:
+      - nexgen
+
+volumes:
+  airflow_db_data:
+  airflow_logs:
+  redis_data:
+
+networks:
+  nexgen:
+    driver: bridge

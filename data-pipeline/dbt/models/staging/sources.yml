@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: nexgen
+    database: postgres
+    schema: public
+    tables:
+      - name: raw_market_data
+        description: "Append-only market price snapshots from Yahoo Finance"
+      - name: raw_fx_rates
+        description: "Append-only FX rate snapshots (to AUD) from Yahoo Finance"
+      - name: raw_dividend_data
+        description: "Dividend announcements fetched daily (ex_date, amount, franking_pct)"
+      - name: activities
+        description: "User transactions: BUY, SELL, DIVIDEND, DEPOSIT, WITHDRAWAL"
+      - name: securities
+        description: "Securities master: symbol, exchange, currency, asset_class"

@@ -1,0 +1,26 @@
+name: nexgen_portfolio
+version: "1.0.0"
+config-version: 2
+
+profile: nexgen_portfolio
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  nexgen_portfolio:
+    staging:
+      +materialized: view
+      +on_schema_change: "sync_all_columns"
+    intermediate:
+      +materialized: table
+      +on_schema_change: "sync_all_columns"
+      +post-hook: "ALTER TABLE {{ this }} ENABLE ROW LEVEL SECURITY"

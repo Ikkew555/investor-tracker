@@ -1,0 +1,6 @@
+Confirmation No,Trade date,Settlement date,Security code,Security name,Buy/Sell,Quantity,Price,Brokerage (incl. GST),Settl. value
+NAB-CONF-20210315-001,15/03/2021,17/03/2021,CBA,Commonwealth Bank of Australia,Buy,200,73.00,21.95,14621.95
+NAB-CONF-20201110-002,10/11/2020,12/11/2020,BHP,BHP Group Limited,Buy,150,52.00,21.95,7821.95
+NAB-CONF-20220620-003,20/06/2022,22/06/2022,CSL,CSL Limited,Buy,20,275.00,21.95,5521.95
+NAB-CONF-20230115-004,15/01/2023,17/01/2023,WBC,Westpac Banking Corporation,Buy,300,30.00,21.95,9021.95
+NAB-CONF-20230301-005,01/03/2023,03/03/2023,TLS,Telstra Group Limited,Buy,500,3.80,14.95,1914.95
